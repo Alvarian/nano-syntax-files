@@ -1,0 +1,87 @@
+syntax "javascript" "\.(mjs)|(js)|(jsx)|(json)|(ts)|(tsx)$"
+
+## Default
+color sky "^.+$"
+
+color plum "<|>"
+
+## Decimal, cotal and hexadecimal numbers
+color yellow "\<[-+]?([1-9][0-9]*|0[0-7]*|0x[0-9a-fA-F]+)([uU][lL]?|[lL][uU]?)?\>"
+
+## Floating point number with at least one digit before decimal point
+color yellow "\<[-+]?([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([EePp][+-]?[0-9]+)?[fFlL]?"
+color yellow "\<[-+]?([0-9]+[EePp][+-]?[0-9]+)[fFlL]?"
+
+## Keywords
+color purple "\<(abstract|await|boolean|break|byte|case|catch|char)\>"
+color bold,blue "\<(type|class|const|continue|debugger|default|delete|double)\>"
+color mauve "\<(do|else|enum|export|extends|finally|final|float|for)\>"
+color mauve "\<(from|function|goto|if|implements|import|instanceof)\>"
+color green "\<(interface|int|in|let|long|native|new|package|private)\>"
+color bold,mauve "\<(protected|public|return|short|static|super|switch)\>"
+color purple "\<(synchronized|this|throws|throw|transient|try|typeof)\>"
+color blue "\<(var|void|volatile|while|with|yield)\>"
+
+## Type specifiers
+color crimson "\<(null|undefined|any|unknown)\>"
+color orange "\<(Array|Boolean|Date|Enumerator|Error|Function|Math)\>"
+color green "\<(Number|Object|RegExp|String|string|number)\>"
+color blue "\<(true|false)\>"
+
+## Escapes
+color red "\\[0-7][0-7]?[0-7]?|\\x[0-9a-fA-F]+|\\[bfnrt'"\?\\]"
+
+
+## html
+# Tags:
+color red "\;|\+|\-|\*|\/|\%|\=|\===|\==|\?|\??|\:|\!=|\!==|\<=|\>=|\<|\>|\&\&|\|\|"
+color teal "\[|\]|"
+color white ">[^<]*<|>\s*([^<]*)<"
+
+color sea "<[[:alpha:]/!?][^>]*>"
+color sea "<[[:alpha:]/!?][^>\n]*"
+color sea "\s*^>"
+color sea "^\s*\/>"
+# Bold, italic, underlined, emphasis, and importance:
+color brightmagenta "</?(b|i|u|em|strong)>"
+
+# Named character references:
+color red "&[^;[:space:]]*;"
+
+# Methods
+color orange "\<(onChange|onClick|onmousedown)"
+
+# Attributes:
+color red "\<(abbr|accept(-charset)?|accesskey|action|alink|align|alt|archive|axis|background|bgcolor|border)"
+color cyan "\<(cell(padding|spacing)|char(off|set)?|checked|cite|class(id)?|className|id|compact|code(base|tag)?|cols(pan)?)"
+color red "\<(content(editable)?|contextmenu|coords|data|datetime|declare|defer|dir|disabled|enctype)"
+color red "\<(for|frame(border)?|headers|height|hidden|href(lang)?|hspace|http-equiv|id|ismap)"
+color red "\<(label|lang|link|longdesc|margin(height|width)|maxlength|media|method|multiple)"
+color purple "\<(name|nohref|noresize|noshade|object|onclick|onfocus|onload|onmouseover|profile|readonly|rel|rev)"
+color cyan "\<(rows(pan)?|rules|scheme|scope|scrolling|selected|shape|size|span|src|standby|start|style|styles|summary)"
+color cyan "\<(tabindex|text|title|usemap|valign|value(type)?|vlink|vspace|width|xmlns|xml:space)"
+
+
+## Closing brackets
+color sky "\=\{[^}]*\}"
+color pink "\=>|\{|\}|"
+color orange "\(|\)|"
+
+## Highlight before colon(:)
+color white "[a-zA-Z]+\:"
+
+## String
+color italic,brightyellow "L?\"(\\"|[^"])*\""
+color italic,brightyellow "L?'(\'|[^'])*'"
+color italic,yellow "L?`(\`|[^`])*`"
+color italic,brightwhite,blue start="\$\{" end="\}"
+
+color white "\,|\<|\>|"
+
+## Highlight after or before period(.)
+color sky "[a-zA-Z]+\."
+color sky "\.[a-zA-Z]+"
+
+## Comments
+color slate start="/\*" end="\*/"
+color slate "//.*$"
